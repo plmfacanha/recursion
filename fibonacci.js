@@ -1,6 +1,6 @@
 const fibonacci = (num) => {
   if (!Number.isInteger(num) || num < 0) {
-    return;
+    return "Not a number or negative number!";
   }
 
   if (num === 0) {
@@ -14,8 +14,9 @@ const fibonacci = (num) => {
   return fibonacci(num - 1) + fibonacci(num - 2);
 };
 
-console.log(fibonacci(0));
-console.log(fibonacci(1));
-console.log(fibonacci(2));
-console.log(fibonacci(5));
-console.log(fibonacci(7));
+// console.log(fibonacci(0));
+// console.log(fibonacci(1));
+// console.log(fibonacci(2));
+// console.log(fibonacci(5));
+// console.log(fibonacci(7));
+console.log(fibonacci("7"));
