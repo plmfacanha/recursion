@@ -1,4 +1,13 @@
-const totalIntegers = (data) => {};
+const isObject = (val) => typeof val === "object" && val !== null;
+
+const totalIntegers = (data) => {
+  if (isObject(data)) {
+    return;
+  }
+
+  const objValues = Object.values(data);
+  console.log(objValues);
+};
 
 console.log(totalIntegers([[5], 3, [10, 20], 10])); // returns 5
 // totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // returns 7
