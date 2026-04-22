@@ -1,7 +1,7 @@
 const isObject = (val) => typeof val === "object" && val !== null;
 
 const totalIntegers = (data) => {
-  if (isObject(data)) {
+  if (!isObject(data)) {
     return;
   }
 
