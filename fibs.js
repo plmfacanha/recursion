@@ -27,6 +27,8 @@ const fibs = (num) => {
 };
 
 const fibsRecursively = (num) => {
+  console.log("This was printed recursively!");
+
   if (!Number.isInteger(num) || num < 0) {
     return;
   }
@@ -61,10 +63,11 @@ const fibsRecursively = (num) => {
 // console.log(fibs(5)); // [0,1,1,2,3,5];
 // console.log(fibs(6)); // [0,1,1,2,3,5,8];
 
-console.log(fibsRecursively(0)); // [0]
-console.log(fibsRecursively(1)); // [0, 1]
-console.log(fibsRecursively(2)); // [0, 1, 1]
-console.log(fibsRecursively(3)); // [0, 1, 1, 2]
-console.log(fibsRecursively(4)); // [0, 1, 1, 2, 3]
-console.log(fibsRecursively(5)); // [0, 1, 1, 2, 3, 5]
-console.log(fibsRecursively(6)); // [0, 1, 1, 2, 3, 5, 8]
+// console.log(fibsRecursively(0)); // [0]
+// console.log(fibsRecursively(1)); // [0, 1]
+// console.log(fibsRecursively(2)); // [0, 1, 1]
+// console.log(fibsRecursively(3)); // [0, 1, 1, 2]
+// console.log(fibsRecursively(4)); // [0, 1, 1, 2, 3]
+// console.log(fibsRecursively(5)); // [0, 1, 1, 2, 3, 5]
+// console.log(fibsRecursively(6)); // [0, 1, 1, 2, 3, 5, 8]
+fibsRecursively(8); // [0, 1, 1, 2, 3, 5, 8]
