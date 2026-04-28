@@ -12,3 +12,4 @@ const mergeSort = (arr) => {
 
 console.log(mergeSort([]));
 console.log(mergeSort([72]));
+console.log(mergeSort([72, 14, 25]));
