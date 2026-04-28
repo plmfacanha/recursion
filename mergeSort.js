@@ -1,36 +1,39 @@
-const mergeSort = (arr) => {
+function mergeSort(arr) {
+  // Base case: arrays with 0 or 1 item are already sorted
   if (arr.length <= 1) return arr;
 
-  // # 1. Divide
-  mid = Math.floor(arr.length / 2); // 3
-  left = mergeSort(arr.slice(0, mid));
-  right = mergeSort(arr.slice(mid, arr.length));
+  // Find the middle point and split the array
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
 
-  // # 2. Merge (Combine)
+  // Merge the sorted halves
   return merge(left, right);
-};
+}
 
-const merge = (left, right) => {
-  sortedArr = [];
-  i = j = 0;
+/**
+ * Helper function to merge two sorted arrays.
+ */
+function merge(left, right) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-  while (i < left.length && j < right.length) {
-    if (left[i] <= right[j]) {
-      sortedArr.append(left[i]);
-      i += 1;
+  // Compare elements from both arrays and push the smaller one
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
     } else {
-      sortedArr.append(right[j]);
-      j += 1;
+      result.push(right[rightIndex]);
+      rightIndex++;
     }
   }
 
-  // # Append any remaining elements
-  sortedArr.push(...left[i]);
-  sortedArr.push(...right[i]);
-
-  return sortedArr;
-};
+  // Concatenate any remaining elements
+  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+}
 
 // console.log(mergeSort([]));
 // console.log(mergeSort([72]));
-console.log(mergeSort([72, 14, 25]));
+console.log(mergeSort([72, 14, 25, 5, 33, 10, 8, 3]));
