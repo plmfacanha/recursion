@@ -4,7 +4,7 @@ const mergeSort = (arr) => {
   // # 1. Divide
   mid = Math.floor(arr.length / 2); // 3
   left = mergeSort(arr.slice(0, mid));
-  right = mergeSort(arr.slice(mid, arr.length - 1));
+  right = mergeSort(arr.slice(mid, arr.length));
 
   // # 2. Merge (Combine)
   return merge(left_half, right_half);
