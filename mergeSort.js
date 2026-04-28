@@ -7,29 +7,30 @@ const mergeSort = (arr) => {
   right = mergeSort(arr.slice(mid, arr.length));
 
   // # 2. Merge (Combine)
-  return merge(left_half, right_half);
+  return merge(left, right);
+};
+
+const merge = (left, right) => {
+  sortedArr = [];
+  i = j = 0;
+
+  while (i < left.length && j < right.length) {
+    if (left[i] <= right[j]) {
+      sortedArr.append(left[i]);
+      i += 1;
+    } else {
+      sortedArr.append(right[j]);
+      j += 1;
+    }
+  }
+
+  // # Append any remaining elements
+  sortedArr.push(...left[i]);
+  sortedArr.push(...right[i]);
+
+  return sortedArr;
 };
 
 // console.log(mergeSort([]));
 // console.log(mergeSort([72]));
 console.log(mergeSort([72, 14, 25]));
-
-/* 
-def merge(left, right):
-    sorted_arr = []
-    i = j = 0
-    
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            sorted_arr.append(left[i])
-            i += 1
-        else:
-            sorted_arr.append(right[j])
-            j += 1
-            
-    # Append any remaining elements
-    sorted_arr.extend(left[i:])
-    sorted_arr.extend(right[j:])
-    return sorted_arr
-
-*/
