@@ -31,7 +31,7 @@ function merge(left, right) {
   }
 
   // Concatenate any remaining elements
-  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+  return result.concat(left.slice(leftIndex), right.slice(rightIndex));
 }
 
 // console.log(mergeSort([]));
